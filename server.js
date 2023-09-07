@@ -3,8 +3,18 @@ const mongoose = require('mongoose')
 const ShortUrl = require('./models/shortUrl')
 const qrcode = require('qrcode');
 const app = express()
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://tawansapanyu54:Tar36301@cluster0.osj7r17.mongodb.net/?retryWrites=true&w=majority')
+/*const connectDB = async () =>{
+    try{
+        await mongoose.connect(process.env.MONGODB_CONNECT_URI)
+        console.log("connection successfullly")
+    }catch(error){
+        console.log("Connect failed " + error)
+    }
+}
+module.exports = connectDB*/
+mongoose.connect(process.env.MONGODB_CONNECT_URI)
     .then(()=> console.log('connection successfullly'))
     .catch((err)=>console.error(err))
     
