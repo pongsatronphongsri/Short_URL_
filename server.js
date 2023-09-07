@@ -14,6 +14,7 @@ mongoose.set('strictQuery', false)
     }
 }
 module.exports = connectDB*/
+//db
 mongoose.connect(process.env.MONGODB_CONNECT_URI,{
     useNewUrlParser: true,
     useUnifiedTopology: true,
