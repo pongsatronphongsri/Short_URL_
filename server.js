@@ -15,6 +15,7 @@ require('dotenv').config();
 }
 module.exports = connectDB*/
 mongoose.connect(process.env.MONGODB_CONNECT_URI)
+    mongoose.set('strictQuery', false)
     .then(()=> console.log('connection successfullly'))
     .catch((err)=>console.error(err))
     
