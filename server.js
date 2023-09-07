@@ -4,7 +4,7 @@ const ShortUrl = require('./models/shortUrl')
 const qrcode = require('qrcode');
 const app = express()
 require('dotenv').config();
-
+mongoose.set('strictQuery', false)
 /*const connectDB = async () =>{
     try{
         await mongoose.connect(process.env.MONGODB_CONNECT_URI)
@@ -15,7 +15,7 @@ require('dotenv').config();
 }
 module.exports = connectDB*/
 mongoose.connect(process.env.MONGODB_CONNECT_URI)
-    mongoose.set('strictQuery', false)
+   
     .then(()=> console.log('connection successfullly'))
     .catch((err)=>console.error(err))
     
